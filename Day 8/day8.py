@@ -36,7 +36,7 @@ while(i < len(input)):
         i = i + 1
     
 
-# print(accumulator)
+print(accumulator)
 
 # Part 2
 def checkLoop(instructions):

@@ -25,9 +25,6 @@ for group in answers:
                 sharedAnswers.remove(character)
                   
     answerTotal = answerTotal + len(sharedAnswers)
-    print('line')
-    print(sharedAnswers)
-    print(len(sharedAnswers))
 
 print(answerTotal)
     

@@ -6,6 +6,7 @@ for i, line in enumerate(input):
 
 nextState = copy.deepcopy(input)
 
+# Part 2 (Logic for part 1 is commented at the bottom!)
 changed = True
 while changed is True:
     changed = False
@@ -247,7 +248,7 @@ print(occupiedCount)
 
 
 
-# Old Logic
+# Logic for Part 1
 # if i > 0 and input[i-1][j] == '#':
 #     emptyCount = emptyCount + 1
 #     if i > 0 and j > 0 and input[i-1][j-1] == '#':

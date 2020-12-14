@@ -3,41 +3,40 @@ input = file.read().strip().split('\n')
 
 # Part 1
 
-# def checkSums(nums, targetVal):
-#     for j in range(len(nums)): 
-#         for k in range(j+1, len(nums)):
-#             if nums[j] + nums[k] == targetVal:
-#                 return True
+def checkSums(nums, targetVal):
+    for j in range(len(nums)): 
+        for k in range(j+1, len(nums)):
+            if nums[j] + nums[k] == targetVal:
+                return True
 
-#     return False
+    return False
 
-# for i in range(25, len(input)):
+for i in range(25, len(input)):
 
-#     sumVals = []
+    sumVals = []
 
-#     # Get value needed to sum to
-#     targetVal = int(input[i])
+    # Get value needed to sum to
+    targetVal = int(input[i])
 
-#     # Get possible sum values
-#     j = i - 1
+    # Get possible sum values
+    j = i - 1
 
-#     while(j >= i - 25):
-#         sumVals.append(int(input[j]))
-#         j = j - 1
+    while(j >= i - 25):
+        sumVals.append(int(input[j]))
+        j = j - 1
 
 
-#     # Loop through sum values
-#     if(checkSums(sumVals, targetVal)):
-#         print('sum found')
+    # Loop through sum values
+    if(checkSums(sumVals, targetVal)):
+        continue
 
-#     else:
-#         print(targetVal, 'failed')
-#         break
+    else:
+        print(targetVal, 'failed')
+        break
     
 
-    
-finalTargetVal = 776203571
-#finalTargetVal = 127
+# Part 2    
+finalTargetVal = targetVal
 
 
 for i in range(len(input)): 

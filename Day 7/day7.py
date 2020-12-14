@@ -4,6 +4,7 @@ input = file.read().strip().split('\n')
 # Get dictionary with bag name as key and array of other bags as value
 bagVals = dict()
 
+# Part 1
 for line in input: 
     # Name of bags
     bagsPos = line.find("bags")
@@ -29,11 +30,7 @@ for line in input:
         bagType = section[numberPos:section.find("bag") - 1]
         bagVals[bagName].append(bagType)
 
-        
-    # print('Bag name', bagName)
-    # print('Bag vals', bagVals[bagName])
 
-# Part 1 (done!)
 shinyGoldCount = 0
 
 def checkForGold(nameOfBag, memo={}):

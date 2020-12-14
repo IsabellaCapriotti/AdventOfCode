@@ -24,40 +24,42 @@ shipCurrDirectionIdx = 1
 shipAbsEW = 0
 shipAbsNS = 0
 
-# # Part 1
-# for line in input:
+# Part 1
+for line in input:
 
-#     instruction = line[0]
-#     val = int(line[1:])
+    instruction = line[0]
+    val = int(line[1:])
 
-#     if instruction == 'F':
-#         directions[currDirection] = directions[currDirection] + val
+    if instruction == 'F':
+        shipDirections[currDirection] = shipDirections[currDirection] + val
 
-#     elif instruction == 'R':
-#         offset = val//90
-#         currDirectionIdx = ((currDirectionIdx + offset) % len(directionNames)) % len(directionNames)
-#         currDirection = directionNames[currDirectionIdx]
-#     elif instruction == 'L':
-#         offset = val//90
-#         currDirectionIdx = ((currDirectionIdx - offset) % len(directionNames)) % len(directionNames)
-#         currDirection = directionNames[currDirectionIdx]
+    elif instruction == 'R':
+        offset = val//90
+        currDirectionIdx = ((currDirectionIdx + offset) % len(directionNames)) % len(directionNames)
+        currDirection = directionNames[currDirectionIdx]
+    elif instruction == 'L':
+        offset = val//90
+        currDirectionIdx = ((currDirectionIdx - offset) % len(directionNames)) % len(directionNames)
+        currDirection = directionNames[currDirectionIdx]
 
-#     else:
-#         directions[instruction] = directions[instruction] + val
+    else:
+        shipDirections[instruction] = shipDirections[instruction] + val
 
 
-# if directions['N'] > directions['S']:
-#     absNS = directions['N'] - directions['S']
-# else:
-#     absNS = directions['S'] - directions['N']
+if shipDirections['N'] > shipDirections['S']:
+    absNS = shipDirections['N'] - shipDirections['S']
+else:
+    absNS = shipDirections['S'] - shipDirections['N']
 
-# if directions['E'] > directions['W']:
-#     absEW = directions['E'] - directions['W']
-# else: 
-#     absEW = directions['W'] - directions['E']
+if shipDirections['E'] > shipDirections['W']:
+    absEW = shipDirections['E'] - shipDirections['W']
+else: 
+    absEW = shipDirections['W'] - shipDirections['E']
 
-# print(abs(absNS) + abs(absEW))
+print(abs(absNS) + abs(absEW))
 
+
+# Part 2
 
 def getAbsPosition(directions):
     if directions['N'] > directions['S']:

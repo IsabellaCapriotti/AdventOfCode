@@ -40,8 +40,8 @@ for line in input:
 
     seatIds.append((row * 8) + col)
 
-# Part 1 solution
-#print(max(seatIds))
+# Part 1
+print(max(seatIds))
 
 # Part 2
 # Sort seat ids
