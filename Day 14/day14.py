@@ -31,44 +31,44 @@ for line in puzzleInput:
 
 
 # Part 1
-# for mask in masksAndInstructions:
+for mask in masksAndInstructions:
 
-#     for instruction in masksAndInstructions[mask]: 
+    for instruction in masksAndInstructions[mask]: 
 
-#         # Get memory address and value from instruction
-#         memAddress = int(instruction[instruction.find('[') + 1 : instruction.find(']')])
-#         value = int(instruction[instruction.find('=') + 2:].strip())
+        # Get memory address and value from instruction
+        memAddress = int(instruction[instruction.find('[') + 1 : instruction.find(']')])
+        value = int(instruction[instruction.find('=') + 2:].strip())
         
         # Convert value to 36-bit binary
-        # binaryValue = convertToBinary(value, 36)
+        binaryValue = convertToBinary(value, 36)
 
         
-#         newBinaryValue = ''
-#         # Compare against bitmask to get new value
-#         for digit in range(len(mask)): 
-#             currMaskChar = mask[digit]
-#             currValChar = binaryValue[digit]
+        newBinaryValue = ''
+        # Compare against bitmask to get new value
+        for digit in range(len(mask)): 
+            currMaskChar = mask[digit]
+            currValChar = binaryValue[digit]
 
-#             if (currMaskChar == 'X') or currMaskChar == currValChar:
-#                 newBinaryValue = newBinaryValue + currValChar
+            if (currMaskChar == 'X') or currMaskChar == currValChar:
+                newBinaryValue = newBinaryValue + currValChar
 
-#             else:
-#                 if currValChar == '0':
-#                     newBinaryValue = newBinaryValue + '1'
-#                 else:
-#                     newBinaryValue = newBinaryValue + '0'
-
-
-#         mem[memAddress] = newBinaryValue
+            else:
+                if currValChar == '0':
+                    newBinaryValue = newBinaryValue + '1'
+                else:
+                    newBinaryValue = newBinaryValue + '0'
 
 
-# # Sum values in memory
-# sum = 0
-# for address in mem:
-#     sum = sum + int(mem[address], 2)
+        mem[memAddress] = newBinaryValue
 
 
-# print(sum)
+# Sum values in memory
+sum = 0
+for address in mem:
+    sum = sum + int(mem[address], 2)
+
+
+print(sum)
 
 
 # Part 2
